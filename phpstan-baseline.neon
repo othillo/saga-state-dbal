@@ -1,7 +1,7 @@
 parameters:
 	ignoreErrors:
 		-
-			message: "#^Method Broadway\\\\Saga\\\\State\\\\Dbal\\\\DbalRepository\\:\\:createAndExecuteQuery\\(\\) should return Doctrine\\\\DBAL\\\\Driver\\\\ResultStatement but returns Doctrine\\\\DBAL\\\\Driver\\\\ResultStatement\\|int\\.$#"
+			message: "#^Method Broadway\\\\Saga\\\\State\\\\Dbal\\\\DbalRepository\\:\\:createAndExecuteQuery\\(\\) should return Doctrine\\\\DBAL\\\\Driver\\\\ResultStatement but returns Doctrine\\\\DBAL\\\\ForwardCompatibility\\\\DriverStatement\\|int\\.$#"
 			count: 1
 			path: src/DbalRepository.php
 
