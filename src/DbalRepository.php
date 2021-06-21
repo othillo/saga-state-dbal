@@ -18,9 +18,9 @@ use Broadway\Saga\State\Criteria;
 use Broadway\Saga\State\RepositoryException;
 use Broadway\Saga\State\RepositoryInterface;
 use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\Driver\ResultStatement;
 use Doctrine\DBAL\Exception\UniqueConstraintViolationException;
 use Doctrine\DBAL\Query\QueryBuilder;
+use Doctrine\DBAL\Result;
 
 class DbalRepository implements RepositoryInterface
 {
@@ -95,7 +95,7 @@ class DbalRepository implements RepositoryInterface
         }
     }
 
-    protected function createAndExecuteQuery(Criteria $criteria, string $sagaId): ResultStatement
+    protected function createAndExecuteQuery(Criteria $criteria, string $sagaId): Result
     {
         /** @var QueryBuilder $queryBuilder */
         $queryBuilder = $this->connection->createQueryBuilder()
