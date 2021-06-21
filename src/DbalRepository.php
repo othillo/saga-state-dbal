@@ -102,11 +102,11 @@ class DbalRepository implements RepositoryInterface
             ->select('*')
             ->from($this->tableName)
             ->where('done = :done')
-            ->setParameter(':done', false);
+            ->setParameter('done', false);
 
         foreach ($criteria->getComparisons() as $key => $value) {
             $queryBuilder->andWhere(sprintf('%s = :%s', $key, $key));
-            $queryBuilder->setParameter(sprintf(':%s', $key), $value);
+            $queryBuilder->setParameter(sprintf('%s', $key), $value);
         }
 
         return $queryBuilder->execute();
