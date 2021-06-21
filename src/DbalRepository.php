@@ -109,6 +109,6 @@ class DbalRepository implements RepositoryInterface
             $queryBuilder->setParameter(sprintf('%s', $key), $value);
         }
 
-        return $queryBuilder->execute();
+        return $queryBuilder->executeQuery();
     }
 }
